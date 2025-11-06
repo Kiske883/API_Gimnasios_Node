@@ -22,7 +22,25 @@ Response:
 Metodo : GET
 URL : /api/clientes/:id
 Headers : no
-Body: nombre, apellidos, direccion, email... 
+Body: no 
 
 Response: 
 - Array con el cliente seleccionado
+
+## Actualizar datos de un cliente
+Metodo : PUT
+URL : /api/clientes/:id
+Headers : no
+Body: nombre, apellidos, direccion, email...
+
+Response: 
+- Array con el cliente actualizado
+
+## eliminar un cliente
+Metodo : DELETE
+URL : /api/clientes/:id
+Headers : no
+Body: no
+
+Response: 
+- Array con el cliente eliminado

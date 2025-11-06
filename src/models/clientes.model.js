@@ -36,5 +36,21 @@ const insertCliente = async ({ nombre, apellidos, edad, email, direccion, genero
         [nombre, apellidos, edad, email, direccion, genero, cuota, fecha_nacimiento, dni]);
     return result;
 }
+// TIP : 
+// Una funciona ha de ser muy comoda al ejecutarse aunque no sea tanto en su diseño,
+// ya que la vamos a ejecutar muchas veces y diseñar solo 1
+const updateCliente = async (clienteId, { nombre, apellidos, edad, email, direccion, genero, cuota, fecha_nacimiento, dni }) => {
+    const [result] = await pool.query(
+        'UPDATE clientes SET nombre = ?, apellidos = ?, edad = ?, email = ?, direccion = ?, genero = ?, cuota = ?, fecha_nacimiento = ?, dni = ? WHERE id = ?',
+        [nombre, apellidos, edad, email, direccion, genero, cuota, fecha_nacimiento, dni, clienteId]
+    );
+    return result;
 
-export default { selectClientes, selectById, insertCliente }
+}
+
+const deleteById = async (clienteId) => {
+    const [result] = await pool.query('DELETE From clientes WHERE id = ? ', [clienteId]);
+    return result;
+}
+
+export default { selectClientes, selectById, insertCliente, updateCliente, deleteById }
