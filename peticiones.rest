@@ -1,0 +1,19 @@
+@URL = http://localhost:3000/api
+
+GET {{URL}}/clientes
+
+###
+POST {{URL}}/clientes
+Content-Type: application/json
+
+{
+    "nombre": "Lluis",
+    "apellidos": "Alsina",
+    "direccion": "15 Helena Terrace",
+    "email": "lalsina883@gmail.com",
+    "edad": 50,
+    "genero": "M",
+    "cuota": "16.90",
+    "fecha_nacimiento": "1975-04-26",
+    "dni": "309632997g"
+}
